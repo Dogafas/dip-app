@@ -12,7 +12,7 @@ on:
       - master
 
 env:
-  IMAGE_NAME: datadynamo/dip-app
+  IMAGE_NAME: dogafas/dip-app
 
 jobs:
   build-and-push:
