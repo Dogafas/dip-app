@@ -58,7 +58,10 @@ jobs:
 
       - name: Extract release version
         id: vars
-        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+        run: |
+          RAW_VER="${GITHUB_REF#refs/tags/}"
+          CLEAN_VER="${RAW_VER#v}"
+          echo "VERSION=${CLEAN_VER}" >> $GITHUB_OUTPUT
 
       - name: Configure Kubeconfig
         run: |
